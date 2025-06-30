@@ -5,14 +5,19 @@ html {
     scroll-behavior: smooth; 
 }
 
+/* START OF CHANGES FOR STICKY FOOTER */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    /* CHANGE: Add padding to the top to make space for the fixed header */
     padding-top: 80px; 
     background-color: #f4f4f4;
     color: #333;
+    
+    /* 1. Make the body a flex container that takes up the full screen height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -20,7 +25,11 @@ body {
     max-width: 960px;
     margin: auto;
     padding: 20px;
+
+    /* 2. Tell the main content area to grow and fill available space */
+    flex: 1 0 auto;
 }
+/* END OF CHANGES FOR STICKY FOOTER */
 
 h1, h2, h3, h4 {
     color: #00446e;
@@ -43,13 +52,10 @@ a:hover {
     color: #fff;
     padding: 1rem 0;
     width: 100%;
-    
-    /* CHANGE: position is now 'fixed' to always stay on screen */
     position: fixed;
     top: 0;
-    left: 0; /* Also good to specify left: 0 for fixed positioning */
+    left: 0; 
     z-index: 1000;
-    
     transition: background-color 0.3s ease;
 }
 
@@ -92,7 +98,7 @@ a:hover {
 /* --- Homepage Hero Section --- */
 .hero {
     text-align: center;
-    padding: 40px 20px 20px 20px; /* Adjusted padding slightly */
+    padding: 40px 20px 20px 20px;
 }
 .hero h1 {
     font-size: 3em;
@@ -201,12 +207,13 @@ a:hover {
     background: #333;
     color: #fff;
     width: 100%;
+    /* 3. Tell the footer not to shrink */
+    flex-shrink: 0;
 }
 
 /* --- Responsive Design --- */
 @media(max-width: 768px) {
     body {
-        /* Adjust padding for smaller screens if nav bar wraps */
         padding-top: 120px;
     }
     .main-nav {
