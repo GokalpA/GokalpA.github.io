@@ -13,7 +13,7 @@
             <a href="index.html" class="logo">Alper Alkan</a>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#about">About</a></li> <!-- This now scrolls down -->
+                <li><a href="#about">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -31,35 +31,34 @@
         <!-- About Section -->
         <section id="about" class="content-section">
             <div class="about-container">
-                
-                <!-- START OF CHANGE -->
-                <!-- Profile Picture with Fallback -->
-                <!-- The browser will first try to load AA.png. If it fails, the onerror event triggers, and it will then try to load AA.jpg. -->
                 <img 
                     src="pictures/AA.png" 
                     onerror="this.onerror=null;this.src='pictures/AA.jpg';"
                     alt="A photo of Alper Alkan" 
                     class="profile-picture">
-                <!-- END OF CHANGE -->
                 
-                <!-- About Text Content -->
                 <div class="about-text">
                     <h2>About Me</h2>
                     <p>
                         I am a dedicated and high-achieving Electrical and Electronics Engineering student at Middle East Technical University, maintaining a 3.93 GPA. My academic focus is on electromagnetic theory, waves, and signal processing. Through internships and projects, I have gained hands-on experience in RF/MW system design, digital logic with FPGAs, and analog circuit design. I am eager to apply my theoretical knowledge and practical skills to tackle real-world engineering problems.
                     </p>
-                    
-                    <hr>
-
-                    <h3>Education</h3>
-                    <p>
-                        <strong>BS in Electrical and Electronics Engineering</strong><br>
-                        Middle East Technical University (2021 – Present)<br>
-                        <em>GPA: 3.93 / 4.0</em>
-                    </p>
                 </div>
             </div>
         </section>
+
+        <!-- START OF CHANGE: Education is now its own section -->
+        <section class="content-section">
+            <h2>Education</h2>
+            <p>
+                <strong>BS in Electrical and Electronics Engineering</strong><br>
+                Middle East Technical University (2021 – Present)<br>
+                <em>GPA: 3.93 / 4.0</em>
+            </p>
+            <p>
+                <strong>Relevant Coursework:</strong> Electromagnetic Theory, Electromagnetic Waves, Signals and Systems I, Signals and Systems II
+            </p>
+        </section>
+        <!-- END OF CHANGE -->
 
         <!-- Experience Section -->
         <section class="content-section">
