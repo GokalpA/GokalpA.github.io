@@ -90,11 +90,12 @@ a:hover { text-decoration: underline; }
 .skills-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .skills-list li { background: #00446e; color: #fff; padding: 8px 15px; border-radius: 5px; font-size: 0.9em; }
 
-
-/* START OF CHANGE: New, simplified styles for the Contact Page */
-.contact-list {
-    max-width: 600px; /* Constrains the width for a cleaner look */
-    margin: 0 auto; /* Centers the list */
+/* START OF CHANGE: Rewritten styles for the Contact Page */
+.contact-page {
+    /* To vertically center content if the page is short */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-item {
@@ -102,43 +103,41 @@ a:hover { text-decoration: underline; }
     align-items: center;
     text-decoration: none;
     color: #333;
-    padding: 15px 10px;
-    border-bottom: 1px solid #eee; /* Separator line */
-    transition: background-color 0.2s ease;
-}
-
-.contact-item:last-child {
-    border-bottom: none; /* Removes the line from the last item */
+    margin-bottom: 30px; /* Space between each line item */
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .contact-item:hover {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Subtle background on hover */
     text-decoration: none;
 }
 
-/* Styles for the icon */
-.contact-item i {
-    font-size: 2.5em; /* Larger icons */
+.contact-item:hover .text-content h3 {
+    color: #007bff; /* Highlight the title on hover */
+}
+
+.contact-item .icon {
+    font-size: 2.5em; /* Made icons larger */
     color: #00446e;
     margin-right: 25px;
     width: 50px; /* Gives icons a consistent space */
     text-align: center;
 }
 
-/* Styles for the text paragraph */
-.contact-item p {
-    margin: 0;
+.contact-item .text-content h3 {
+    margin: 0 0 5px 0;
     font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.contact-item .text-content span {
+    font-size: 1em; /* Increased font size for readability */
     color: #6c757d;
     word-break: break-all;
 }
-
-.contact-item p strong {
-    color: #343a40;
-    font-weight: 600;
-}
 /* END OF CHANGE */
-
 
 /* --- Footer --- */
 .main-footer { text-align: center; padding: 20px; background: #333; color: #fff; width: 100%; flex-shrink: 0; }
@@ -154,7 +153,8 @@ a:hover { text-decoration: underline; }
     .experience-item h3 { flex-direction: column; align-items: center; }
     .experience-item ul { text-align: left; }
 
-    /* Responsive adjustments for contact list */
-    .contact-item i { font-size: 2em; margin-right: 15px; }
-    .contact-item p { font-size: 1em; }
+    /* Make contact items a bit smaller on mobile */
+    .contact-item .icon { font-size: 2em; margin-right: 15px; }
+    .contact-item .text-content h3 { font-size: 1em; }
+    .contact-item .text-content span { font-size: 0.9em; }
 }
