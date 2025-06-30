@@ -118,22 +118,21 @@ a:hover { text-decoration: underline; }
 .project-card { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
 .project-card h3 { margin-top: 0; }
 
-/* START OF CHANGE: Adjusted project link styles */
 .project-links {
     margin-top: auto;
     padding-top: 15px;
     border-top: 1px solid #eee;
     display: flex;
-    justify-content: flex-start; /* Aligns multiple items to the left */
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    gap: 25px; /* Increased gap for more space between links */
+    /* --- CHANGE HERE: Increased the gap for more space --- */
+    gap: 40px; 
 }
 
 .project-links.single-link {
-    justify-content: flex-end; /* Overrides the rule above to align single links to the right */
+    justify-content: flex-end;
 }
-/* END OF CHANGE */
 
 .project-link {
     font-size: 0.9em;
