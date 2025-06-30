@@ -62,23 +62,8 @@ a:hover { text-decoration: underline; }
 
 /* --- About Section on Homepage --- */
 .about-container { display: flex; align-items: flex-start; gap: 40px; }
-
-.profile-picture {
-    width: 250px;
-    height: 250px;
-    min-width: 250px;
-    border-radius: 50%; 
-    border: 6px solid #e9ecef;
-    background-image: url('pictures/1.png'), url('pictures/1.jpg');
-    background-size: cover;
-    background-position: center;
-    transition: all 0.4s ease-in-out;
-}
-.profile-picture:hover {
-    background-image: url('pictures/2.png'), url('pictures/2.jpg');
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
+.profile-picture { width: 250px; height: 250px; min-width: 250px; border-radius: 50%; border: 6px solid #e9ecef; background-image: url('pictures/1.png'), url('pictures/1.jpg'); background-size: cover; background-position: center; transition: all 0.4s ease-in-out; }
+.profile-picture:hover { background-image: url('pictures/2.png'), url('pictures/2.jpg'); transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 .about-text { flex: 1; }
 
 /* Styles for download buttons */
@@ -105,47 +90,52 @@ a:hover { text-decoration: underline; }
 .skills-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .skills-list li { background: #00446e; color: #fff; padding: 8px 15px; border-radius: 5px; font-size: 0.9em; }
 
-/* START OF CHANGE: New styles for the Contact Page */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+/* START OF CHANGE: Rewritten styles for the Contact Page */
+.contact-page {
+    /* To vertically center content if the page is short */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #dee2e6;
     text-decoration: none;
     color: #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px; /* Space between each line item */
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .contact-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background-color: #f8f9fa; /* Subtle background on hover */
     text-decoration: none;
 }
 
+.contact-item:hover .text-content h3 {
+    color: #007bff; /* Highlight the title on hover */
+}
+
 .contact-item .icon {
-    font-size: 2em;
+    font-size: 2.5em; /* Made icons larger */
     color: #00446e;
-    margin-right: 20px;
+    margin-right: 25px;
+    width: 50px; /* Gives icons a consistent space */
+    text-align: center;
 }
 
 .contact-item .text-content h3 {
     margin: 0 0 5px 0;
     font-size: 1.1em;
+    transition: color 0.3s ease;
 }
 
 .contact-item .text-content span {
-    font-size: 0.9em;
+    font-size: 1em; /* Increased font size for readability */
     color: #6c757d;
-    word-break: break-all; /* Prevents long links from overflowing */
+    word-break: break-all;
 }
 /* END OF CHANGE */
 
@@ -162,4 +152,9 @@ a:hover { text-decoration: underline; }
     .about-container { flex-direction: column; align-items: center; text-align: center; }
     .experience-item h3 { flex-direction: column; align-items: center; }
     .experience-item ul { text-align: left; }
+
+    /* Make contact items a bit smaller on mobile */
+    .contact-item .icon { font-size: 2em; margin-right: 15px; }
+    .contact-item .text-content h3 { font-size: 1em; }
+    .contact-item .text-content span { font-size: 0.9em; }
 }
