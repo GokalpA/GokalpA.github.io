@@ -1,11 +1,9 @@
 /* style.css */
 
-/* --- Global Styles & Typography --- */
-html {
-    scroll-behavior: smooth; 
-}
+/* ... (The top part of your CSS is the same) ... */
 
-/* START OF CHANGES FOR STICKY FOOTER */
+/* --- Global Styles & Typography --- */
+html { scroll-behavior: smooth; }
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
@@ -13,36 +11,20 @@ body {
     padding-top: 80px; 
     background-color: #f4f4f4;
     color: #333;
-    
-    /* 1. Make the body a flex container that takes up the full screen height */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
 .container {
     width: 80%;
     max-width: 960px;
     margin: auto;
     padding: 20px;
-
-    /* 2. Tell the main content area to grow and fill available space */
     flex: 1 0 auto;
 }
-/* END OF CHANGES FOR STICKY FOOTER */
-
-h1, h2, h3, h4 {
-    color: #00446e;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
+h1, h2, h3, h4 { color: #00446e; }
+a { color: #007bff; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* --- Header & Navigation --- */
 .main-header {
@@ -58,8 +40,6 @@ a:hover {
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
-
-
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -68,176 +48,87 @@ a:hover {
     max-width: 960px;
     margin: auto;
 }
-
-.main-nav .logo {
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-.main-nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.main-nav ul li {
-    display: inline;
-    margin-left: 25px;
-}
-
-.main-nav a {
-    color: #fff;
-}
-
-.main-nav a.active {
-    color: #5dade2;
-    font-weight: bold;
-}
+.main-nav .logo { color: #fff; font-weight: bold; font-size: 1.5em; }
+.main-nav ul { padding: 0; margin: 0; list-style: none; }
+.main-nav ul li { display: inline; margin-left: 25px; }
+.main-nav a { color: #fff; }
+.main-nav a.active { color: #5dade2; font-weight: bold; }
 
 /* --- Homepage Hero Section --- */
-.hero {
-    text-align: center;
-    padding: 40px 20px 20px 20px;
-}
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-.hero p {
-    font-size: 1.2em;
-    color: #666;
-}
+.hero { text-align: center; padding: 40px 20px 20px 20px; }
+.hero h1 { font-size: 3em; margin-bottom: 10px; }
+.hero p { font-size: 1.2em; color: #666; }
 
 /* --- Content Sections --- */
-.content-section {
-    background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
+.content-section { background: #fff; padding: 40px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
 
 /* --- About Section on Homepage --- */
-.about-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-}
+.about-container { display: flex; align-items: flex-start; gap: 40px; }
 
+/* START OF MAJOR CHANGES for Profile Picture */
 .profile-picture {
-    width: 200px;
-    height: 200px;
+    /* 1. Make the picture bigger */
+    width: 250px;
+    height: 250px;
+    min-width: 250px; /* Prevents it from shrinking on smaller flex containers */
+    
     border-radius: 50%; 
-    object-fit: cover; 
-    border: 5px solid #e9ecef;
+    border: 6px solid #e9ecef;
+    
+    /* 2. Set the default background image */
+    /* This will try 1.png first, and if that fails, it will try 1.jpg */
+    background-image: url('pictures/1.png'), url('pictures/1.jpg');
+    
+    /* 3. Ensure the image covers the area correctly */
+    background-size: cover;
+    background-position: center;
+    
+    /* 4. Add a smooth transition for the hover effect */
+    transition: all 0.4s ease-in-out;
 }
 
-.about-text {
-    flex: 1; 
+/* 5. Define the hover effect */
+.profile-picture:hover {
+    /* Change the background image on hover */
+    background-image: url('pictures/2.png'), url('pictures/2.jpg');
+    
+    /* Optional: Add other cool hover effects */
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+/* END OF MAJOR CHANGES */
+
+.about-text { flex: 1; }
+
+/* ... (The rest of your CSS file is the same) ... */
 
 /* --- Experience Section Styling --- */
-.experience-item {
-    margin-bottom: 25px;
-}
-.experience-item h3 {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border-bottom: 2px solid #e9ecef;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-.experience-item h3 .date {
-    font-size: 0.9rem;
-    font-weight: normal;
-    color: #666;
-    white-space: nowrap;
-    margin-left: 15px;
-}
-.experience-item ul {
-    padding-left: 20px;
-    margin-top: 10px;
-}
+.experience-item { margin-bottom: 25px; }
+.experience-item h3 { display: flex; justify-content: space-between; flex-wrap: wrap; border-bottom: 2px solid #e9ecef; padding-bottom: 5px; margin-bottom: 10px; }
+.experience-item h3 .date { font-size: 0.9rem; font-weight: normal; color: #666; white-space: nowrap; margin-left: 15px; }
+.experience-item ul { padding-left: 20px; margin-top: 10px; }
 
 /* --- Projects Page --- */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-.project-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-}
-.project-card h3 {
-    margin-top: 0;
-}
-.project-card a {
-    margin-top: auto; 
-}
-
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.project-card { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+.project-card h3 { margin-top: 0; }
+.project-card a { margin-top: auto; }
 
 /* --- Skills List --- */
-.skills-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.skills-list li {
-    background: #00446e;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 0.9em;
-}
+.skills-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.skills-list li { background: #00446e; color: #fff; padding: 8px 15px; border-radius: 5px; font-size: 0.9em; }
 
 /* --- Footer --- */
-.main-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
-    width: 100%;
-    /* 3. Tell the footer not to shrink */
-    flex-shrink: 0;
-}
+.main-footer { text-align: center; padding: 20px; background: #333; color: #fff; width: 100%; flex-shrink: 0; }
 
 /* --- Responsive Design --- */
 @media(max-width: 768px) {
-    body {
-        padding-top: 120px;
-    }
-    .main-nav {
-        flex-direction: column;
-    }
-    .main-nav ul {
-        margin-top: 15px;
-    }
-    .main-nav ul li {
-        margin: 0 10px;
-    }
-    .hero h1 {
-        font-size: 2.2em;
-    }
-    .about-container {
-        flex-direction: column; 
-        align-items: center;  
-        text-align: center;
-    }
-    .experience-item h3 {
-        flex-direction: column;
-        align-items: center;
-    }
-    .experience-item ul {
-        text-align: left;
-    }
+    body { padding-top: 120px; }
+    .main-nav { flex-direction: column; }
+    .main-nav ul { margin-top: 15px; }
+    .main-nav ul li { margin: 0 10px; }
+    .hero h1 { font-size: 2.2em; }
+    .about-container { flex-direction: column; align-items: center; text-align: center; }
+    .experience-item h3 { flex-direction: column; align-items: center; }
+    .experience-item ul { text-align: left; }
 }

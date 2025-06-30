@@ -31,11 +31,10 @@
         <!-- About Section -->
         <section id="about" class="content-section">
             <div class="about-container">
-                <img 
-                    src="pictures/AA.png" 
-                    onerror="this.onerror=null;this.src='pictures/AA.jpg';"
-                    alt="A photo of Alper Alkan" 
-                    class="profile-picture">
+                
+                <!-- START OF CHANGE: Replaced <img> with a <div> for the CSS hover effect -->
+                <div class="profile-picture" role="img" aria-label="A photo of Alper Alkan"></div>
+                <!-- END OF CHANGE -->
                 
                 <div class="about-text">
                     <h2>About Me</h2>
@@ -46,7 +45,7 @@
             </div>
         </section>
 
-        <!-- START OF CHANGE: Education is now its own section -->
+        <!-- Education Section -->
         <section class="content-section">
             <h2>Education</h2>
             <p>
@@ -58,10 +57,10 @@
                 <strong>Relevant Coursework:</strong> Electromagnetic Theory, Electromagnetic Waves, Signals and Systems I, Signals and Systems II
             </p>
         </section>
-        <!-- END OF CHANGE -->
 
         <!-- Experience Section -->
         <section class="content-section">
+            <!-- ... (The rest of your index.html file is the same) ... -->
             <h2>Engineering Experience</h2>
             <div class="experience-item">
                 <h3>RF/MW System Design Candidate Engineer, ASELSAN <span class="date">Feb 2025 – Jun 2025</span></h3>
