@@ -81,18 +81,19 @@ a:hover { text-decoration: underline; }
 }
 .about-text { flex: 1; }
 
-/* START OF CHANGE: Styles for download buttons */
+/* Styles for download buttons */
 .download-links {
     margin-top: 25px;
     display: flex;
-    gap: 15px;
+    /* --- CHANGE HERE: Increased the gap for more space --- */
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 .download-button {
     display: inline-block;
     background-color: #007bff;
-    color: #fff !important; /* Use !important to override default link color */
+    color: #fff !important; 
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
@@ -106,7 +107,6 @@ a:hover { text-decoration: underline; }
     text-decoration: none;
     transform: translateY(-2px);
 }
-/* END OF CHANGE */
 
 /* --- Experience Section Styling --- */
 .experience-item { margin-bottom: 25px; }
