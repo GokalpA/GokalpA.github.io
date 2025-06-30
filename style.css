@@ -85,7 +85,6 @@ a:hover { text-decoration: underline; }
 .download-links {
     margin-top: 25px;
     display: flex;
-    /* --- CHANGE HERE: Increased the gap for more space --- */
     gap: 25px;
     flex-wrap: wrap;
 }
@@ -118,7 +117,35 @@ a:hover { text-decoration: underline; }
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 .project-card { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
 .project-card h3 { margin-top: 0; }
-.project-card a { margin-top: auto; }
+
+.project-links {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* START OF CHANGE: New rule for single links */
+.project-links.single-link {
+    justify-content: flex-end; /* Pushes the single link to the right side */
+}
+/* END OF CHANGE */
+
+.project-link {
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: #00446e;
+    text-decoration: none;
+}
 
 /* --- Skills List --- */
 .skills-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }

@@ -1,4 +1,3 @@
-      
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,6 @@
             <a href="index.html" class="logo">Alper Alkan</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <!-- This now links to the about section on the homepage -->
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -29,16 +27,24 @@
             
             <div class="project-grid">
                 
+                <!-- START OF CHANGE: FPGA project card now has only one link -->
                 <div class="project-card">
                     <h3>2D Fighting Game in Verilog</h3>
                     <p>Developed a Footsies-inspired 2D fighting game with 1-Player and 2-Player modes for the DE1-SOC FPGA developer board. Utilized board features like HEX Displays, buttons, LEDs, GPIO pins, and a VGA output to display game/player states and handle inputs.</p>
-                    <a href="https://github.com/GokalpA" target="_blank">View on GitHub →</a>
+                    <div class="project-links single-link">
+                        <a href="https://github.com/GokalpA" class="project-link" target="_blank">View on GitHub →</a>
+                    </div>
                 </div>
+                <!-- END OF CHANGE -->
 
                 <div class="project-card">
                     <h3>Photophone</h3>
                     <p>Designed and constructed a system that transmits audio via light. The circuit takes audio input from a microphone, modulates it onto a LASER LED signal, and transmits it. A receiving circuit with a photodiode and power amplifier demodulates the signal and outputs the audio through a speaker.</p>
-                    <a href="https://github.com/GokalpA" target="_blank">View on GitHub →</a>
+                    <div class="project-links">
+                        <a href=pdfs/projects/photopone/photophoneProjectReport.pdf class="project-link" download>Report</a>
+                        <a href="pdfs/projects/photopone/photophoneProjectDescription.pdf" class="project-link" download>Definition</a>
+                        <a href="https://github.com/GokalpA" class="project-link" target="_blank">GitHub →</a>
+                    </div>
                 </div>
 
             </div>
@@ -51,5 +57,3 @@
 
 </body>
 </html>
-
-    
