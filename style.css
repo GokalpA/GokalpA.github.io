@@ -1,7 +1,5 @@
 /* style.css */
 
-/* ... (The top part of your CSS is the same) ... */
-
 /* --- Global Styles & Typography --- */
 html { scroll-behavior: smooth; }
 body {
@@ -65,42 +63,50 @@ a:hover { text-decoration: underline; }
 /* --- About Section on Homepage --- */
 .about-container { display: flex; align-items: flex-start; gap: 40px; }
 
-/* START OF MAJOR CHANGES for Profile Picture */
 .profile-picture {
-    /* 1. Make the picture bigger */
     width: 250px;
     height: 250px;
-    min-width: 250px; /* Prevents it from shrinking on smaller flex containers */
-    
+    min-width: 250px;
     border-radius: 50%; 
     border: 6px solid #e9ecef;
-    
-    /* 2. Set the default background image */
-    /* This will try 1.png first, and if that fails, it will try 1.jpg */
     background-image: url('pictures/1.png'), url('pictures/1.jpg');
-    
-    /* 3. Ensure the image covers the area correctly */
     background-size: cover;
     background-position: center;
-    
-    /* 4. Add a smooth transition for the hover effect */
     transition: all 0.4s ease-in-out;
 }
-
-/* 5. Define the hover effect */
 .profile-picture:hover {
-    /* Change the background image on hover */
     background-image: url('pictures/2.png'), url('pictures/2.jpg');
-    
-    /* Optional: Add other cool hover effects */
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
-/* END OF MAJOR CHANGES */
-
 .about-text { flex: 1; }
 
-/* ... (The rest of your CSS file is the same) ... */
+/* START OF CHANGE: Styles for download buttons */
+.download-links {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff !important; /* Use !important to override default link color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+/* END OF CHANGE */
 
 /* --- Experience Section Styling --- */
 .experience-item { margin-bottom: 25px; }
