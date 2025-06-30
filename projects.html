@@ -1,3 +1,4 @@
+      
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,8 @@
             <a href="index.html" class="logo">Alper Alkan</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <!-- This now links to the about section on the homepage -->
+                <li><a href="index.html#about">About</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -21,23 +23,25 @@
     </header>
 
     <main class="container">
-        <h2>My Projects</h2>
-        <p>A selection of projects that demonstrate my skills in digital design, analog circuits, and system integration.</p>
-        
-        <div class="project-grid">
+        <div class="content-section">
+            <h2>My Projects</h2>
+            <p>A selection of projects that demonstrate my skills in digital design, analog circuits, and system integration.</p>
             
-            <div class="project-card">
-                <h3>2D Fighting Game in Verilog</h3>
-                <p>Developed a Footsies-inspired 2D fighting game with 1-Player and 2-Player modes for the DE1-SOC FPGA developer board. Utilized board features like HEX Displays, buttons, LEDs, GPIO pins, and a VGA output to display game/player states and handle inputs.</p>
-                <a href="https://github.com/GokalpA" target="_blank">View on GitHub →</a>
-            </div>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <h3>2D Fighting Game in Verilog</h3>
+                    <p>Developed a Footsies-inspired 2D fighting game with 1-Player and 2-Player modes for the DE1-SOC FPGA developer board. Utilized board features like HEX Displays, buttons, LEDs, GPIO pins, and a VGA output to display game/player states and handle inputs.</p>
+                    <a href="https://github.com/GokalpA" target="_blank">View on GitHub →</a>
+                </div>
 
-            <div class="project-card">
-                <h3>Photophone</h3>
-                <p>Designed and constructed a system that transmits audio via light. The circuit takes audio input from a microphone, modulates it onto a LASER LED signal, and transmits it. A receiving circuit with a photodiode and power amplifier demodulates the signal and outputs the audio through a speaker.</p>
-                <a href="https://github.com/GokalpA" target="_blank">View on GitHub →</a>
-            </div>
+                <div class="project-card">
+                    <h3>Photophone</h3>
+                    <p>Designed and constructed a system that transmits audio via light. The circuit takes audio input from a microphone, modulates it onto a LASER LED signal, and transmits it. A receiving circuit with a photodiode and power amplifier demodulates the signal and outputs the audio through a speaker.</p>
+                    <a href="https://github.com/GokalpA" target="_blank">View on GitHub →</a>
+                </div>
 
+            </div>
         </div>
     </main>
 
@@ -47,3 +51,5 @@
 
 </body>
 </html>
+
+    
